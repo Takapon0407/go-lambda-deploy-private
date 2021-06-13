@@ -1,14 +1,15 @@
 package main
 
 import (
-    "context"
-    "fmt"
-    "github.com/aws/aws-lambda-go/lambda"
+	"context"
+	"fmt"
+
+	"github.com/aws/aws-lambda-go/lambda"
 )
 
 type MyEvent struct {
-    FirstName string json:"firstName"
-    LastName  string json:"lastName"
+    FirstName string `json:"firstName"`
+    LastName  string `json:"lastName"`
 }
 
 func HandleRequest(ctx context.Context, name MyEvent) (string, error) {
