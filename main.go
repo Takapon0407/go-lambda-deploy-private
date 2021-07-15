@@ -21,5 +21,5 @@ func HandleRequest(ctx context.Context, name MyEvent) (string, error) {
 func main() {
 	log.Printf("lambda started!")
     lambda.Start(HandleRequest)
-	log.Printf("lambda finished!")
+	log.Printf("lambda finished!!")
 }
