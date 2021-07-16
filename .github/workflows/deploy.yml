@@ -34,3 +34,14 @@ jobs:
           aws_region: ${{ secrets.AWS_REGION }}
           function_name: go-lambda-deploy-from-github
           zip_file: function.zip
+      - name: Success Notification
+        uses: rtCamp/action-slack-notify@v2.0.0
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_TITLE: "lambdaのデプロイが完了しました。"
+      - name: Slack Notification Failure
+        if: failure()
+        uses: rtCamp/action-slack-notify@v2.0.0
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_TITLE: "lambdaのデプロイに失敗しました。"
