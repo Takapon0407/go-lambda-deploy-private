@@ -1,5 +1,6 @@
 # go-lambdaのデプロイ環境テスト用
 goで書いたスクリプトをGithubActionsを使ってlambdaへデプロイできることを確認するための検証用リポジトリ。
+もともとprivateで作成したのでリポジトリ名にprivate入っているけど、秘匿情報はsecretsに入れているため問題ないはず。
 
 main.goが処理本体。
 
